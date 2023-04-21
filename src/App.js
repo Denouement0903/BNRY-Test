@@ -9,6 +9,8 @@ import Image from 'react-bootstrap/Image'
 import { Navbar, Nav, Form, Container } from 'react-bootstrap';
 import CustomFooter from './components/Footer'
 import Loader from './components/Loader'
+// import { BrowserRouter, Routes, Route } from 'react-router-dom';
+// import Articles from './pages/Articles';
 
 
 
@@ -17,21 +19,7 @@ function App() {
   const [items, setItems] = useState([]);
   const [isLoaded, setIsLoaded] = useState(false);
 
-  
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     try {
-  //       const response = await axios.get(`https://newsapi.org/v2/everything?q=tesla&from=2023-03-21&sortBy=publishedAt&apiKey=f17fef0a90de4501b5dc92f582865a4e`)
-  //       setIsLoaded(true);
-  //       setItems(response.data.articles);
-  //     } catch (error) {
-  //       console.log(error);
-  //     }
-  //   };
-  //   fetchData();
-  // },);
-
-
+  // amous6432@gmail.com latest for api, too many requests
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -71,6 +59,13 @@ function App() {
             <Nav className="me-auto my-2 my-lg-0" style={{ maxHeight: '100px' }} navbarScroll>
               <Nav.Link href="/">Home</Nav.Link>
               <Nav.Link href="./pages/Articles.jsx">Articles</Nav.Link>
+              {/* <BrowserRouter>
+              <Routes>
+                <Route path="./pages/Articles.js" element={Articles}/>
+              </Routes>
+
+              </BrowserRouter> */}
+                {/* <Route index element={<Home/>}/> */}
             </Nav>
             <Form className="d-flex">
               <Form.Control
@@ -92,6 +87,11 @@ function App() {
       {isLoaded ? (
         // empty tag is like a div, but called fragment to display content in browser
         <>
+        <br/>
+        <h1>Binary News</h1>
+        <hr size="4" width="75%" color="black"/>
+        <p className='fst-italic'>News for your needs</p>
+        <br/>
  <Container fluid>
   <Row>
     {items.map(item => (
