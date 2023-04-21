@@ -1,0 +1,41 @@
+import React, { useEffect, useState } from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import NavbarComp from './components/NavbarComponent';
+
+function App() {
+  const [items, setItems] = useState([]);
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  // Call API when component mounts
+  useEffect(() => {
+    fetch('https://newsapi.org/v2/everything?q=tesla&from=2023-03-20&sortBy=publishedAt&apiKey=9bd2f1c3020c48ff8cc54997bbcafb52')
+      .then(response => response.json())
+      .then(data => {
+        setIsLoaded(true);
+        setItems(data.articles);
+        console.log(data);
+      });
+  }, []);
+
+  // Return JSX to render on the page
+  return (
+    <div className="App">
+      <NavbarComp />
+      {isLoaded ? (
+        <>
+          <h3>Data successfully loaded</h3>
+          {/* creates new array to display selected data */}
+          <ul>
+            {items.map(item => (
+              <li key={item.title}>{item.title}</li>
+            ))}
+          </ul>
+        </>
+      ) : (
+        <h5>Loading data...</h5>
+      )}
+    </div>
+  );
+}
+
+export default App;
