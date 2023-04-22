@@ -59,7 +59,8 @@ function App() {
           <img src="https://img.icons8.com/fluency/48/null/news.png" alt='logo'/>          </Navbar.Brand>
           <Navbar.Toggle aria-controls="navbarScroll" />
           <Navbar.Collapse id="navbarScroll">
-          
+          <a className="m-3 text-decoration-none" href="#home">Home</a>
+          <a className="m-3 text-decoration-none" href="#articles">Articles</a>
             <Form className="d-flex justify-content-end align-content-end">
               <Form.Control
                 type="search"
@@ -81,8 +82,9 @@ function App() {
         // empty tag is like a div, but called fragment to display content in browser
         <>
         <Home/>
- <Container fluid>
+ <Container fluid id="articles" className="my-5 p-5 w-100">
   <Row>
+ <h2 className="text-decoration-underline my-2 p-3 display-3">What's happening in the world?</h2>
     {items.map(item => (
       <>
         <h4 key={item.title}>
@@ -90,11 +92,10 @@ function App() {
         </h4>
         <Col  xs={4}key={item.description}>
           {item.description}
-
-          
         </Col>
-        <Col  xs={6} key={item.urlToImage}>
+        <Col xs={6} key={item.urlToImage}>
           <Image src={item.urlToImage} alt='{item.urlToImage}' fluid className="min-vh-75 rounded my-auto d-block"/>
+            Author: <span className="text-dark my-2" key={item.author}>{item.author}</span>
         </Col>
       </>
     ))}

@@ -5,11 +5,13 @@
   object-fit: cover;
   background-attachment: fixed;
   min-height: 100vh;
+  min-width: 150vh;
   overflow-x: hidden;
 }
 
 body {
   margin: 0;
+  overflow-x: hidden;
   background-color: white;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -21,9 +23,10 @@ body {
 h1{
   color: white;
   margin-top: 20vh;
+  
 }
 
-p, hr, link {
+p, hr, a {
   color: white;
 }
 
