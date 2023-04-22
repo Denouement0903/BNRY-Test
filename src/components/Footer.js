@@ -34,8 +34,8 @@ export default function CustomFooter() {
         </section>
       </MDBContainer>
     {/* set year to be dynamic */}
-      <div className='text-center p-3' style={{ backgroundColor: 'rgba(0, 0, 0, 0.2)' }}>
-        © 2020 Copyright:
+      <div className='text-center p-3 bg-dark' style={{ backgroundColor: 'rgba(0, 0, 0, 0.2)' }}>
+        © 2020 Copyright: 
         <a className='text-white' href='https://github.com/Simp4Hitagi'>
           Deno Rautenbach
         </a>
