@@ -6,9 +6,10 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Image from 'react-bootstrap/Image'
 // import CustomNavbar from './components/Navbar'
-import { Navbar, Nav, Form, Container } from 'react-bootstrap';
+import { Navbar, Form, Container } from 'react-bootstrap';
 import CustomFooter from './components/Footer'
 import Loader from './components/Loader'
+import { Home } from './pages/Home';
 // import Carousel from './components/Carousel';
 // import { BrowserRouter, Routes, Route } from 'react-router-dom';
 // import Articles from './pages/Articles';
@@ -52,24 +53,14 @@ function App() {
           {/* Navbar */}
     {/* <CustomNavbar/> */}
     <div className="Navbar">
-      <Navbar bg="light" expand="lg" sticky="top" scrolling>
-        <Container fluid>
+      <Navbar expand="lg" sticky="top" scrolling>
+        <Container fluid className='w-100'>
           <Navbar.Brand href="#">
-          <img src="https://img.icons8.com/external-flatart-icons-flat-flatarticons/64/null/external-news-seo-and-media-flatart-icons-flat-flatarticons.png" alt='logo'/>          </Navbar.Brand>
+          <img src="https://img.icons8.com/fluency/48/null/news.png" alt='logo'/>          </Navbar.Brand>
           <Navbar.Toggle aria-controls="navbarScroll" />
           <Navbar.Collapse id="navbarScroll">
-            <Nav className="me-auto my-2 my-lg-0" style={{ maxHeight: '100px' }} navbarScroll>
-              <Nav.Link href="/">Home</Nav.Link>
-              <Nav.Link href="./pages/Articles.jsx">Articles</Nav.Link>
-              {/* <BrowserRouter>
-              <Routes>
-                <Route path="./pages/Articles.js" element={Articles}/>
-              </Routes>
-
-              </BrowserRouter> */}
-                {/* <Route index element={<Home/>}/> */}
-            </Nav>
-            <Form className="d-flex">
+          
+            <Form className="d-flex justify-content-end align-content-end">
               <Form.Control
                 type="search"
                 onChange={(event) => setSearch(event.target.value)}
@@ -89,12 +80,7 @@ function App() {
       {isLoaded ? (
         // empty tag is like a div, but called fragment to display content in browser
         <>
-        <br/>
-        <h1>Binary News</h1>
-        <hr size="4" align="center" width="75%" color="black"/>
-        <p className='fst-italic'>News for your needs</p>
-        {/* <Carousel/> */}
-        <br/>
+        <Home/>
  <Container fluid>
   <Row>
     {items.map(item => (
