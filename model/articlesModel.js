@@ -3,7 +3,7 @@ const express = require('express')
 const fetch = require("node-fetch");
 
 async function getNews() {
-  const url = "https://newsapi.org/v2/everything?q=apple&from=2023-04-20&to=2023-04-20&sortBy=popularity&apiKey=9bd2f1c3020c48ff8cc54997bbcafb52";
+  const url = "https://newsapi.org/v2/everything?q=tesla&from=2023-03-22&sortBy=publishedAt&apiKey=21486e37c8984a9a90f807e01585acac";
 
   const response = await fetch(url);
   if (!response.ok) {
@@ -14,7 +14,7 @@ async function getNews() {
 }
 
 async function searchNews(q) {
-    const url = `https://newsapi.org/v2/everything?q=${q}&from=2023-04-20&to=2023-04-20&sortBy=popularity&apiKey=9bd2f1c3020c48ff8cc54997bbcafb52`;
+    const url = `https://newsapi.org/v2/everything?q=${q}&from=2023-03-22&sortBy=publishedAt&apiKey=21486e37c8984a9a90f807e01585acac`;
   
     const response = await fetch(url);
     if (!response.ok) {
