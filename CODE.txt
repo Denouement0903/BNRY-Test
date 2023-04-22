@@ -39,3 +39,47 @@ function App() {
 }
 
 export default App;
+
+
+
+
+======Carousel=======
+
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
+import Image from 'react-bootstrap/Image';
+
+import {
+  MDBCarousel,
+  MDBCarouselItem,
+} from 'mdb-react-ui-kit';
+
+export default function Carousel() {
+  const [items, setItems] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      let response = await axios.get(`https://newsapi.org/v2/everything?q=apple&from=2023-03-21&sortBy=publishedAt&apiKey=83f798474f6b46edbe0f82c0f4557d81`);
+      setItems(response.data.articles);
+    };
+    fetchData();
+  }, []);
+
+  return (
+    <MDBCarousel showIndicators showControls fade>
+      {items.map((item) => (
+        <MDBCarouselItem key={item.url}>
+          <Image
+            className='w-100 d-block'
+            src={item.urlToImage}
+            alt={item.title}
+          />
+          <h4>{item.title}</h4>
+          <p>{item.author}</p>
+        </MDBCarouselItem>
+      ))}
+    </MDBCarousel>
+  );
+}
+
+

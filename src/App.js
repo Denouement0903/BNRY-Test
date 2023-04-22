@@ -9,6 +9,7 @@ import Image from 'react-bootstrap/Image'
 import { Navbar, Nav, Form, Container } from 'react-bootstrap';
 import CustomFooter from './components/Footer'
 import Loader from './components/Loader'
+// import Carousel from './components/Carousel';
 // import { BrowserRouter, Routes, Route } from 'react-router-dom';
 // import Articles from './pages/Articles';
 
@@ -19,18 +20,19 @@ function App() {
   const [items, setItems] = useState([]);
   const [isLoaded, setIsLoaded] = useState(false);
 
-  // amous6432@gmail.com latest for api, too many requests
+  // simp4hitagi@gmail.com latest for api, too many requests
   useEffect(() => {
     const fetchData = async () => {
       try {
         let response;
         if (!search) {
           response = await axios.get(
-            `https://newsapi.org/v2/everything?q=tesla&from=2023-03-21&sortBy=publishedAt&apiKey=83f798474f6b46edbe0f82c0f4557d81`
+            `/articles`
           );
+          console.log(response);
         } else {
           response = await axios.get(
-            `https://newsapi.org/v2/everything?q=${search}&from=2023-03-21&sortBy=publishedAt&apiKey=83f798474f6b46edbe0f82c0f4557d81`
+            `/search`
           );
         }
         setIsLoaded(true);
@@ -89,8 +91,9 @@ function App() {
         <>
         <br/>
         <h1>Binary News</h1>
-        <hr size="4" width="75%" color="black"/>
+        <hr size="4" align="center" width="75%" color="black"/>
         <p className='fst-italic'>News for your needs</p>
+        {/* <Carousel/> */}
         <br/>
  <Container fluid>
   <Row>
