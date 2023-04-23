@@ -1,3 +1,7 @@
+// npm run dev
+// npm start
+// CTRL+Shift+P
+// CTRL+Shift+R
 const express = require('express');
 const router = require('./routes/articlesRoute');
 const cors = require('cors')
