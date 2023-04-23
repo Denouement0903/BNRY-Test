@@ -6,7 +6,7 @@ const articlesModel = require("../model/articlesModel");
 
 
 router.get('/', function (request, response) {
-    response.send('Hello World!');
+    response.send('Hello There, this is the home directory.');
   });
 
 
