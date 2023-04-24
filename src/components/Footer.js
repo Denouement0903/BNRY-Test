@@ -10,7 +10,7 @@ export default function CustomFooter() {
   const year = new Date();
   let currentYear = year.getFullYear()
   return (
-    <MDBFooter className='bg-light text-center text-white w-100'>
+    <MDBFooter className='bg-light text-center text-white w-100' style={{height: '100%'}}>
       <MDBContainer className='p-4 pb-0'>
         <section className='mb-4'>
 
