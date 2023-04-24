@@ -3,6 +3,9 @@
 Github: https://github.com/Simp4Hitagi/BNRY-Test
 Render: https://binary-news.onrender.com
 
+Routes: /articles
+	/searchq='your search term' 
+
 Main technologies used:
 
 React
