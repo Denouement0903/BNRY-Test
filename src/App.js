@@ -96,7 +96,7 @@ function App() {
                       <Card.Body className='text-light opacity-75 cardBody'>
                         <h3 lang="fr" className='titleText' key={item.title}>{item.title}</h3>
                         <h6 lang="fr" className='descriptionText' key={item.description}>
-                          {item.description.length <= 500 ? item.description : `${item.description.slice(0, 500)}...`}
+                          {item.description}
                         </h6>
 
                         <Button className='articleBtn w-50 mx-auto my-5' variant="primary" key={item.url}>

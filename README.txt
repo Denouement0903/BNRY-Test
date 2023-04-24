@@ -1,31 +1,29 @@
-1. npm install react-bootstrap bootstrap
+========= LINKS =========
 
-2. import individual components like: 
+Github: https://github.com/Simp4Hitagi/BNRY-Test
+Render: https://binary-news.onrender.com
 
-import Button from 'react-bootstrap/Button';
+Main technologies used:
 
-// or less ideally
-import { Button } from 'react-bootstrap';
+React
+Node, Express
+Bootstrap
+Javascript
 
-3. link to index.html above closing body tag: 
+========= Frontend =========
 
-<script src="https://cdn.jsdelivr.net/npm/react/umd/react.production.min.js" crossorigin></script>
+proxy: https://binary-news.onrender.com 
 
-<script
-  src="https://cdn.jsdelivr.net/npm/react-dom/umd/react-dom.production.min.js"
-  crossorigin></script>
+To run project: npm start
+To install node packages: npm install
 
-<script
-  src="https://cdn.jsdelivr.net/npm/react-bootstrap@next/dist/react-bootstrap.min.js"
-  crossorigin></script>
+========== Backend =========
 
-<script>var Alert = ReactBootstrap.Alert;</script>
+API_KEY = 2e2da230023649dea89dc34a95dc57f4
 
-AND 
+To run project with scripts:
+			-node: npm start
+			-nodemon: npm run dev
 
-link to App.js: 
 
-import 'bootstrap/dist/css/bootstrap.min.css';
-
-rnfs for boilerplate
 
