@@ -1,4 +1,14 @@
 .home{
+  background-image: url('https://i.postimg.cc/k50FPHL8/1.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  object-fit: cover;
+  background-attachment: fixed;
+  min-height: 100vh;
+  min-width: 150vh;
+  overflow-x: hidden;
+}
+#about{
   background-image: url('https://i.postimg.cc/hGXn0HKs/1318e11aee7e8d6c9a9bf0f6368873a9.gif');
   background-repeat: no-repeat;
   background-size: cover;
@@ -24,7 +34,6 @@ body {
 h1{
   color: white;
   margin-top: 20vh;
-  
 }
 
 #cardImg {
@@ -46,6 +55,10 @@ h1{
 
 p, hr, a {
   color: white;
+}
+
+.aboutUs{
+  font-size: 14px;
 }
 
 .navbar{

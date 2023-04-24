@@ -11,6 +11,7 @@ import { Navbar, Form, Container } from 'react-bootstrap';
 import CustomFooter from './components/Footer'
 import Loader from './components/Loader'
 import { Home } from './pages/Home';
+import { About } from './pages/About';
 
 function App() {
   const [search, setSearch] = useState('');
@@ -54,6 +55,7 @@ function App() {
           <Navbar.Toggle aria-controls="navbarScroll"  className='bg-light opacity-20'/>
           <Navbar.Collapse id="navbarScroll">
           <a className="m-3 text-decoration-none" href="#home">Home</a>
+          <a className="m-3 text-decoration-none" href="#about">About</a>
           <a className="m-3 text-decoration-none" href="#articles">Articles</a>
             <Form className="d-flex justify-content-end align-content-end">
               <Form.Control
@@ -72,6 +74,7 @@ function App() {
 
     <div className="min-vh-100">
         <Home/>
+        <About/>
       {isLoaded ? (
         <>
         <Container fluid id="articles" className="my-5 p-5 w-100">
@@ -79,9 +82,9 @@ function App() {
             <h2 className="text-decoration-underline my-2 p-3 display-3">What's happening in the world?</h2>
             {/* Mapping through array of API links from hosted Server side */}
             {items
-  .filter(item => item.title.includes(search))
+  .filter(item => item && item.title && item.title.toLowerCase().includes(search.toLowerCase()))
   .map(item => (
-    <Col xs={12} md={6}>
+    <Col xs={12} md={3}>
       <Card id='card' className='w-100 my-3 border border-3 border-dark bg-dark' key={item.urlToImage}>
         <Card.Img variant="top" className='w-100' id='cardImg' src={item.urlToImage} alt='{item.urlToImage}' fluid/>
           <h6 className="text-light mx-3 my-2
@@ -97,6 +100,7 @@ function App() {
       </Card>
     </Col>
   ))}
+
 
           </Row>
         </Container>
